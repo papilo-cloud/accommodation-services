@@ -1,0 +1,173 @@
+.room{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    color: #2f2d51;
+}
+.room .top{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.room .top button, .room .top .image{
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #eee;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+.room .top p{
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.room .img{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.room .img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.room .img .details{
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    bottom: 10px;
+    border-radius: 15px;
+}
+.room .text{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    letter-spacing: .5px;
+    margin-bottom: 20px;
+}
+.room .text h2{
+    margin-bottom: 5px;
+}
+.room .text .p{
+    margin-bottom: 12px;
+}
+.room .text p{
+    font-size: 0.9em;
+    line-height: 18px;
+}
+.room .text .likes{
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.room .text .likes p{
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.room .text .likes .div{
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+.room .text .likes .stars{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.room .text .likes .stars .star{
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 22px;
+    background-color: #93d8f8;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.5);
+}
+.room .text .likes .like{
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #ff97b5;
+    transform: rotate(45deg);
+}
+.room .text .likes .like::after{
+    content: '';
+    position: absolute;
+    background-color: #ff97b5;
+    width: 25px;
+    height: 25px;
+    top: -10px;
+    border-radius: 50%;
+}
+.room .text .likes .like::before{
+    content: '';
+    position: absolute;
+    background-color: #ff97b5;
+    width: 25px;
+    height: 25px;
+    left: -10px;
+    border-radius: 50%;
+}
+.room .book{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.room .book .price{
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.room .book .price p{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.room .book .price span{
+    font-weight: 400;
+    font-size: 0.7em;
+    opacity: .5;
+    align-self: flex-end;
+}
+.room .book button{
+    border: none;
+    padding: 20px 30px;
+    color: #fff;
+    border-radius: 30px ;
+    background-color: #93d8f8;
+    color: #2f2d51;
+    font-weight: 600;
+    font-size: .8em;
+}
