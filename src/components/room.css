@@ -15,8 +15,8 @@
 }
 .room .top button, .room .top .image{
     border: none;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border-radius: 5px;
     text-align: center;
     background-color: #eee;
@@ -171,3 +171,119 @@
     font-weight: 600;
     font-size: .8em;
 }
+.room .check-in{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    color: #2f2d51;
+
+}
+.room .check-in .date .check{
+    margin-bottom: 5px;
+    display: flex;
+    gap: 30px;
+    /* justify-content: space-between; */
+}
+.room .check-in .date .check p{
+    flex: 1;
+}
+.room .check-in .date .div{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 30px;
+}
+.room .check-in .date .picker{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.room .check-in .date .date-picker{
+    position: relative;
+    border: 0;
+    width: 100px;
+    color: #2f2d51;
+    padding: 10px 0;
+}
+.room .check-in .number{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:30px;
+}
+.room .check-in .number label{
+    position: relative;
+    width: 50%;
+}
+.room .check-in .number label div{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.room .check-in .number p{
+    margin-bottom: 10px;
+}
+.room .check-in .number input{
+    width: 100px;
+    border: 0;
+}
+.room section{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+}
+.room section .back{
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+.room section .back button{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.room section form{
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+.room section input{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #2f2d51;
+}
+.room section form button{
+    margin: 0 auto;
+    padding: 20px 40px;
+    border-radius: 30px;
+    border: 0;
+    font-weight: 600;
+    font-size: 0.9em;
+    background-color: #93d8f8;
+}
+
+/* .room .check-in .date .cal-name{
+    position: fixed;
+    top: 0;
+    right: 0;
+} */
