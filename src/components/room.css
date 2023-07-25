@@ -22,6 +22,10 @@
     background-color: #eee;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
 }
+.room .top .image{
+    background-color: inherit;
+    box-shadow: none;
+}
 .room .top p{
     font-weight: 600;
     font-size: 1.1em;
@@ -36,7 +40,7 @@
     overflow: hidden;
     margin-bottom: 20px;
 }
-.room .img img{
+.room .img .img1{
     position: absolute;
     top: 0;
     left: 0;
@@ -51,7 +55,35 @@
     transform: translateX(-50%);
     width: 80%;
     bottom: 10px;
+    display: flex;
+    padding: 5px 15px;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 15px;
+}
+.room .img .details .imgs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.room .img .details .imgs span{
+    font-size: 0.7em;
+    /* font-weight: 600; */
+    color: #fff;
+}
+.room .img .details .imgs:nth-child(4){
+    padding: 12px 13px;
+    background-color: #93d8f8;
+    border-radius: 50%;
+}
+.room .img .details .imgs:nth-child(4)::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #f5f5f5;
+    left: -27px;
 }
 .room .text{
     padding: 20px;
@@ -236,6 +268,7 @@
 .room .check-in .number input{
     width: 100px;
     border: 0;
+    padding: 10px;
 }
 .room section{
     position: relative;
