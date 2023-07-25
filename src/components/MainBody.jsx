@@ -4,8 +4,6 @@ import { Routes , Route, Link } from "react-router-dom";
 import './mainbody.css'
 import image from '../assets/images/images1.jpeg'
 
-console.log(data)
-
 
 const MainBody = () => {
   return (

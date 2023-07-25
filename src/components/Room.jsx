@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from 'react'
+import { useLocation, useParams } from 'react-router';
 import DatePicker from "react-datepicker";
 import data from '../data.js'
+import { Link } from 'react-router-dom';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -14,7 +15,6 @@ import shower from '../assets/shower.svg'
 import wifi from '../assets/wifi.svg'
 
 import './room.css'
-import { Link } from 'react-router-dom';
 
 const Room = ({handleUser}) => {
     const [startDate, setStartDate] = useState(new Date())
@@ -23,11 +23,20 @@ const Room = ({handleUser}) => {
     const [fname, setFname] = useState('')
     const [lname, setLname] = useState('')
     const [mail, setMail] = useState('')
+    const [number, setNumber] = useState(0)
     const [guests, setGuests] = useState(0)
-    const [adults, setAdults] = useState(0)
+    const [rooms, setRooms] = useState(0)
     const [click, setClick] = useState(false)
+    const [submit, setSubmit] = useState(false)
 
     const {userId} = useParams();
+    const location = useLocation()
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+
+    }, [location])
+    
 
     function getId(number) {
         return data.find(
@@ -36,9 +45,7 @@ const Room = ({handleUser}) => {
       }
 
     let room = getId(parseInt(userId, 10))
-    console.log(room.img)
 
-    
 
     function handleSubmit(e) {
 
@@ -47,6 +54,7 @@ const Room = ({handleUser}) => {
             fname,
             lname,
             mail,
+            number,
             title: mr,
             sday: startDate.getDate(),
             smonth: startDate.getMonth(),
@@ -55,16 +63,17 @@ const Room = ({handleUser}) => {
             diff:  endDate.getDate()-startDate.getDate(),
             hours: startDate.getHours(),
             guests,
-            adults,
+            rooms,
         })
-        setAdults('')
+        setRooms('')
         setFname('')
         setLname('')
         setMail('')
+        setSubmit(true)
     }
     function handleClick(params) {
         
-        if (guests > 0 && adults > 0) {
+        if (guests > 0 && rooms > 0) {
             setClick(true)
         } else{
             alert('Guests and Adults cannot be 0 or negative')
@@ -85,6 +94,8 @@ const Room = ({handleUser}) => {
                 
             </div>
         </div>
+        <div className='grid'>
+        <div>
         <div className="img">
             <img className='img1' src={`.${room.img}`} alt="image" />
             <div className="details">
@@ -122,6 +133,8 @@ const Room = ({handleUser}) => {
                 <span className='like'></span>
             </div>
         </div>
+        </div>
+        <div className="grid2">
         <div className="check-in">
             <div className="date">
                 <div className="check">
@@ -160,22 +173,22 @@ const Room = ({handleUser}) => {
                 </div>
                 <div className="number">
                     <label>
-                        <p>Guests</p>
+                        <p>Rooms</p>
                         <div>
                             <input type="number" placeholder='0'
-                            value={guests}
-                            onChange={(e)=> setGuests(e.target.value)}
+                            value={rooms}
+                            onChange={(e)=> setRooms(e.target.value)}
                             min={1}
                              />
                             <img src={down} alt="down-arrow" />
                         </div>
                     </label>
                     <label>
-                        <p>Adults</p>
+                        <p>Guests</p>
                         <div>
                             <input type="number" 
-                            value={adults}
-                            onChange={(e)=> setAdults(e.target.value)}
+                            value={guests}
+                            onChange={(e)=> setGuests(e.target.value)}
                             min={1}
                             placeholder='0' />
                             <img src={down} alt="down-arrow" />
@@ -193,6 +206,8 @@ const Room = ({handleUser}) => {
                 Book Now
             </button>
         </div>
+        </div>
+        </div>
         </>
     ) :
         <section>
@@ -204,21 +219,40 @@ const Room = ({handleUser}) => {
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='Mr.' value={mr}
                 onChange={(e) => setMr(e.target.value)}/>
+
                 <input type="text" value={fname}
                 required
                 placeholder='First Name'
                  onChange={(e) => setFname(e.target.value)}
                   />
+
                 <input type="text" value={lname}
                 required
                 onChange={(e) => setLname(e.target.value)}
                  placeholder='First Name' />
+
                 <input type="mail" value={mail}
                 required
                  onChange={(e) => setMail(e.target.value)}
                  placeholder=' Email Address' />
-                 <button type="submit">Submit</button>
+                 <input type="number" id="" 
+                 value={number}
+                 required
+                 onChange={(e) => setNumber(e.target.value)}
+                 />
+
+                   {!submit && <div className="butn">
+                        <button type='submit'>
+                            Submit
+                        </button>
+                       
+                    </div>}
             </form>
+           {submit && <div className='button'>
+                <Link to={`/room/${userId}/book`}>
+                    Proceed to Payment
+                </Link>
+            </div>}
         </section>
     }
     </div>

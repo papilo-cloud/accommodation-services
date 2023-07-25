@@ -10,9 +10,9 @@ const Header = () => {
 
   useEffect(() => {
     function showMenu(e) {
-      if (!myref.current.contains(e.target)) {
-        setShow(false)
-      }
+      // if (!myref.current.contains(e.target)) {
+      //   setShow(false)
+      // }
     }
     document.body.addEventListener('click', showMenu)
   }, [])

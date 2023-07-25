@@ -11,7 +11,6 @@ import {Routes, Route } from 'react-router'
 
 function App() {
   const [user, setUser] = useState([]);
-  console.log(user)
 
   function handleUser(params) {
     setUser(params)
@@ -25,7 +24,7 @@ function App() {
       <Routes>
         <Route path='/' exact element={<MainBody />} />
         <Route path='room/:userId' element={<Room handleUser={handleUser} />} />
-        <Route path='room/:userId/num' element={<Booking />} />
+        <Route path='room/:userId/book' element={<Booking user={user} />} />
       </Routes>
     </div>
   )
