@@ -80,8 +80,7 @@ const Booking = ({user}) => {
            </div>
            <div className="payment">
                 <div className="details">
-                    {/* <img src={payment} alt="payment" /> */}
-                    <h3>Payment & Details</h3>
+                    <h3>Details</h3>
                     <div className="contact">
                         <p className='name'>{ user.title+' '+user.fname +' '+user.lname}</p>
                         <p className="mail">
@@ -112,7 +111,9 @@ const Booking = ({user}) => {
                         <p>${total}</p>
                     </div>
                     <button>
+                    <Link to={`/room/${userId}/book/payment`}>
                         Confirm
+                    </Link>
                     </button>
                 </div>
            </div>

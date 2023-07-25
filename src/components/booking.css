@@ -137,6 +137,7 @@
 }
 .date .payment .details h3{
     text-align: center;
+    margin-bottom: 20px;
 }
 .date .payment .details .contact {
     position: relative;
@@ -149,11 +150,10 @@
 .date .payment .details .detail div {
     position: relative;
     width: 100%;
-    /* margin-bottom: 20px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #000;
+    border-bottom: 0.1px solid #93d8f8;
     padding: 20px 0;
 }
 .date .payment .details .detail div p:nth-child(2) {
@@ -197,6 +197,10 @@
     border-radius: 40px;
     font-size: 0.9em;
     font-weight: 600;
+}
+.date .payment .total a{
+    color: #2f2d51;
+    text-decoration: none;
 }
 @media screen and (min-width: 768px) {
     .booking .top{

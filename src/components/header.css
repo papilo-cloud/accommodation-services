@@ -16,6 +16,7 @@ header nav {
     justify-content: space-between;
     align-items: center;
 }
+
 nav .hamburger button{
     border: none;
     background-color: inherit;
@@ -30,8 +31,14 @@ nav .list{
     margin: 0;
     transition: .3s;
 }
+nav .list li{
+    font-weight: 600;
+}
 
 @media screen and (max-width: 768px) {
+    header nav h2{
+        font-size: 1em;
+    }
     nav .list{
         position: fixed;
         list-style: none;
@@ -52,6 +59,7 @@ nav .list{
     }
     nav .list li{
         padding-top: 40px;
+        font-size: 0.8em;
     }
     nav .show{
         right: 0;
@@ -67,6 +75,7 @@ nav .list{
     header{
         padding:20px 40px;
     }
+    
     nav .hamburger button{
         display: none;
     }
