@@ -4,6 +4,7 @@
     margin: 0;
     background-color: #fff;
     font-family: sans-serif;
+    color: #2f2d51;
 }
 .booking .top{
     padding: 20px;
@@ -26,23 +27,29 @@
     font-weight: 600;
     font-size: 1.1em;
 }
+.booking .bottom{
+    position: relative;
+    width: 100%;
+    /* background-color: #f2f7ff; */
+    margin: 0;
+    /* padding: 20px; */
+}
 .booking .date{
     position: relative;
     width: 100%;
     background-color: #f2f7ff;
-    padding: 20px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-radius: 40px 40px 0 0;
+    padding-top: 20px;
 }
 .booking .date .times{
     position: relative;
-    width: 100%;
+    width: 90%;
     display: flex;
+    margin: 20px auto; 
     justify-content: space-between;
     align-items: center;
     padding: 12px;
+    padding: 20px;
     border-radius: 20px;
     background-color: #fff;
 }
@@ -51,17 +58,29 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    gap: 10px;
+    gap: 25px;
 }
 .booking .date .time .check{
     position: relative;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+}
+.booking .date .time p{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.booking .date .time .check .img{
+    position: relative;
+    background: linear-gradient(to bottom right,rgba(255, 151, 181, 0.4), #ff97b5) ;
+    padding: 1px 3px;
+    border-radius: 50%;
 }
 .booking .date .time .check span{
     font-size: 0.7em;
+}
+.booking .date .time .check span:nth-of-type(2){
+    opacity: .4;
 }
 .booking .date .time .check p{
     line-height: 24px;
@@ -79,14 +98,101 @@
 .booking .date .time::after{
     position: absolute;
     content: '';
-    width: 100%;
+    width: 70%;
     height: 2px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #f2f7ff;
     top: 50%;
+    left: 70px;
 }
 .booking .date .times .pick{
     position: relative;
-    padding: 40px 20px;
-    border-radius:  30px;
-    background-color: #ff97b5;
+    padding:40px 20px;
+    border-radius:  20px;
+    width: 110px;
+    background: linear-gradient(to bottom right,rgba(255, 151, 181, 0.4), #ff97b5) ;
+    text-align: center;
+}
+.booking .date .times .pick .img{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+}
+.booking .date .times .pick span{
+    font-size: 0.8em;
+    color: #fff;
+}
+.date .payment{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    padding: 20px;
+    border-radius: 30px 30px 0 0;
+    background-color: #fff;
+}
+.date .payment .details h3{
+    text-align: center;
+}
+.date .payment .details .contact {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.date .payment .details .contact p{
+    line-height: 36px;
+}
+.date .payment .details .detail div {
+    position: relative;
+    width: 100%;
+    /* margin-bottom: 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding: 20px 0;
+}
+.date .payment .details .detail div p:nth-child(2) {
+    font-size: 1em;
+}
+
+.date .payment .details .detail div p{
+    font-size: 0.8em;
+    font-weight: 600;
+}
+.date .payment .details .detail .night p{
+    font-size: 1em;
+    font-weight: 600;
+}
+.date .payment .details .detail .night span{
+    font-size: 0.7em;
+    opacity: .6;
+    font-weight: 400;
+}
+.date .payment .total{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+.date .payment .total span{
+    font-size: 0.8em;
+    opacity: .7;
+}
+.date .payment .total p{
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 29px;
+}
+.date .payment .total button{
+    border: 0;
+    padding: 20px 30px;
+    background-color: #93d8f8;
+    border-radius: 40px;
+    font-size: 0.9em;
+    font-weight: 600;
 }

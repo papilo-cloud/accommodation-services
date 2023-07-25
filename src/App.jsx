@@ -8,13 +8,20 @@ import Booking from './components/Booking'
 
 
 function App() {
+  const [user, setUser] = useState([]);
+  console.log(user)
+
+  function handleUser(params) {
+    setUser(params)
+    // console.log(params)
+  }
 
   return (
     <div className="app">
       {/* <Header />
       <MainBody /> */}
-      {/* <Room /> */}
-      <Booking />
+      <Room handleUser={handleUser} />
+      {/* <Booking /> */}
     </div>
   )
 }
