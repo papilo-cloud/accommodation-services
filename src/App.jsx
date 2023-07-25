@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import Header from './components/Header'
+
 import './App.css'
 import MainBody from './components/MainBody'
-import Room from './components/Room'
 import Booking from './components/Booking'
+import Room from './components/Room'
+import {Routes, Route } from 'react-router'
 
 
 
@@ -18,10 +20,13 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Header />
-      <MainBody /> */}
-      <Room handleUser={handleUser} />
-      {/* <Booking /> */}
+      <Header />
+      
+      <Routes>
+        <Route path='/' exact element={<MainBody />} />
+        <Route path='room/:userId' element={<Room handleUser={handleUser} />} />
+        <Route path='room/:userId/num' element={<Booking />} />
+      </Routes>
     </div>
   )
 }

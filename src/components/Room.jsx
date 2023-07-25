@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router';
 import DatePicker from "react-datepicker";
+import data from '../data.js'
 
 import "react-datepicker/dist/react-datepicker.css";
 
 import image from '../assets/images/images1.jpeg'
 import down from '../assets/down-arrow.svg'
 import caret from '../assets/caret-left.svg'
+import ac from '../assets/air-c.svg'
+import bed from '../assets/bed.svg'
+import shower from '../assets/shower.svg'
+import wifi from '../assets/wifi.svg'
+
 import './room.css'
+import { Link } from 'react-router-dom';
 
 const Room = ({handleUser}) => {
     const [startDate, setStartDate] = useState(new Date())
@@ -15,12 +23,25 @@ const Room = ({handleUser}) => {
     const [fname, setFname] = useState('')
     const [lname, setLname] = useState('')
     const [mail, setMail] = useState('')
-    const [guests, setGuests] = useState('')
-    const [adults, setAdults] = useState('')
+    const [guests, setGuests] = useState(0)
+    const [adults, setAdults] = useState(0)
     const [click, setClick] = useState(false)
+
+    const {userId} = useParams();
+
+    function getId(number) {
+        return data.find(
+          num => num.id === number
+        );
+      }
+
+    let room = getId(parseInt(userId, 10))
+    console.log(room.img)
+
     
 
     function handleSubmit(e) {
+
         e.preventDefault();
         handleUser({
             fname,
@@ -32,6 +53,7 @@ const Room = ({handleUser}) => {
             eday: endDate.getDate(),
             emonth: endDate.getMonth(),
             diff:  endDate.getDate()-startDate.getDate(),
+            hours: startDate.getHours(),
             guests,
             adults,
         })
@@ -41,8 +63,11 @@ const Room = ({handleUser}) => {
         setMail('')
     }
     function handleClick(params) {
-        if (guests.trim().length > 0 && adults.trim().length > 0) {
+        
+        if (guests > 0 && adults > 0) {
             setClick(true)
+        } else{
+            alert('Guests and Adults cannot be 0 or negative')
         }
     }
 
@@ -51,23 +76,37 @@ const Room = ({handleUser}) => {
     {!click? (<>
         <div className="top">
             <button>
-            <img src={caret} alt="caret-left" />
+            <Link to='/'>
+                <img src={caret} alt="caret-left" />
+            </Link>
             </button>
             <p>room</p>
             <div className="image">
-                Aj
+                
             </div>
         </div>
         <div className="img">
-            <img src={image} alt="image" />
+            <img className='img1' src={`.${room.img}`} alt="image" />
             <div className="details">
-                <p>one</p>
-                <p>two</p>
-                <p>four</p>
+                <div className="imgs">
+                    <img src={bed} alt="bed-image" />
+                    <span>{room.bed}</span>
+                </div>
+                <div className="imgs">
+                    <img src={ac} alt="ac-image" />
+                    <span>{room.ac}</span>
+                </div>
+                <div className="imgs">
+                    <img src={shower} alt="shower-image" />
+                    <span>{room.shower}</span>
+                </div>
+                {room.wifi && <div className="imgs">
+                    <img src={wifi} alt="wifi-image" />
+                </div>}
             </div>
         </div>
         <div className="text">
-            <h2>Sunny Appartment</h2>
+            <h2>{room.type}</h2>
             <p className='p'>120 sq. ft</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Praesentium aspernatur dicta aperiam doloremque nisi enim 
@@ -75,7 +114,7 @@ const Room = ({handleUser}) => {
                  fugiat libero, optio at quis nostrum iure, asperiores labore esse!</p>
             <div className="likes">
                 <div className="div">
-                <p>4.8</p>
+                <p>{room.stars}</p>
                 <div className="stars">
                     <span className='star'></span>
                 </div>
@@ -126,6 +165,7 @@ const Room = ({handleUser}) => {
                             <input type="number" placeholder='0'
                             value={guests}
                             onChange={(e)=> setGuests(e.target.value)}
+                            min={1}
                              />
                             <img src={down} alt="down-arrow" />
                         </div>
@@ -136,6 +176,7 @@ const Room = ({handleUser}) => {
                             <input type="number" 
                             value={adults}
                             onChange={(e)=> setAdults(e.target.value)}
+                            min={1}
                             placeholder='0' />
                             <img src={down} alt="down-arrow" />
                         </div>
@@ -146,7 +187,7 @@ const Room = ({handleUser}) => {
         
         <div className="book">
             <div className='price'>
-                <p>$54</p> <span>/per day</span>
+                <p>${room.price}</p> <span>/per day</span>
             </div>
             <button type='button' onClick={handleClick}>
                 Book Now
