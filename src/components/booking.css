@@ -16,16 +16,18 @@
 }
 .booking .top button, .booking .top .image{
     border: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
     text-align: center;
     background-color: #eee;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 .booking .top p{
     font-weight: 600;
     font-size: 1.1em;
+    text-align: center;
+    align-self: center;
 }
 .booking .bottom{
     position: relative;
@@ -195,4 +197,30 @@
     border-radius: 40px;
     font-size: 0.9em;
     font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+    .booking .top{
+        padding: 40px;
+    }
+    .date .payment{
+        padding: 40px;
+    }
+}
+@media screen and (min-width: 968px) {
+    .booking .top{
+        padding: 40px 6rem;
+    }
+    .booking .top p:nth-child(2){
+        font-size: 2em;
+    }
+    .booking .date{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 6rem;
+        padding-top: 40px;
+        gap: 40px;
+    }
+    .booking .date .payment{
+        border-radius: 30px;
+    }
 }

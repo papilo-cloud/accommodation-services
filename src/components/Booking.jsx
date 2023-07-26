@@ -4,15 +4,45 @@ import calendar from '../assets/calendar.svg'
 import arrowdown from '../assets/arrow-down-left.svg'
 import arrowup from '../assets/arrow-up-right.svg'
 import payment from '../assets/payment-m.svg'
+import caret from '../assets/caret-left.svg'
+import data from '../data.js'
 
-const Booking = () => {
+import { Link, useParams } from 'react-router-dom'
+
+const Booking = ({user}) => {
+
+    const {userId} = useParams()
+    function getId(number) {
+        return data.find(
+          num => num.id === number
+        );
+      }
+
+    let room = getId(parseInt(userId, 10))
+
+    const months = [
+                    'January','February','March',
+                    'April','May','June','July',
+                    'August','September', 'October',
+                    'Noveember', 'December'
+                ]
+    const rDay = user.eday - user.sday;
+    const total = rDay*user.rooms*room.price + 25.89 + 18.00;
+    const subTotal = rDay*user.rooms*room.price;
+
+    console.log(user)
+    console.log(room)
   return (
     <div className='booking'>
         <div className="top">
-            <button>L</button>
+        <button>
+            <Link to={`/room/${userId}`}>
+                <img src={caret} alt="caret-left" />
+            </Link>
+            </button>
             <p>booking</p>
             <div className="image">
-                Aj
+                <p>{user.fname[0].toUpperCase()+user.lname[0].toUpperCase()}</p>
             </div>
         </div>
         <div className="bottom">
@@ -25,18 +55,18 @@ const Booking = () => {
                         </div>
                         <div className="txt">
                             <span>Check in</span>
-                            <p>11 June</p>
+                            <p>{user.sday} {months[user.smonth]}</p>
                             <span>2PM-5PM</span>
                         </div>
                     </div>
-                    <p className='p'>5 nights</p>
+                    <p className='p'>{rDay} nights</p>
                     <div className="check out">
                         <div className="img">
                             <img src={arrowup} alt="arrow-up" />
                         </div>
                         <div className="txt">
                             <span>Check out</span>
-                            <p>16 June</p>
+                            <p>{user.eday} {months[user.emonth]}</p>
                             <span>6PM-8PM</span>
                         </div>
                     </div>
@@ -53,18 +83,18 @@ const Booking = () => {
                     {/* <img src={payment} alt="payment" /> */}
                     <h3>Payment & Details</h3>
                     <div className="contact">
-                        <p className='name'>Mr. Abdul Sani</p>
+                        <p className='name'>{ user.title+' '+user.fname +' '+user.lname}</p>
                         <p className="mail">
-                            abusani@yahoo.com
+                            {user.mail}
                         </p>
                         <p className="phone">
-                            +2347064307340
+                            {user.number}
                         </p>
                     </div>
                     <div className="detail">
                         <div className="night">
-                            <p>5 Nights <span>x 54</span></p>
-                            <p>$270.00</p>
+                            <p>{user.rooms} Rooms x {rDay} Nights <span>x {room.price}</span></p>
+                            <p>${subTotal} </p>
                         </div>
                         <div className="service">
                             <p>Service charges</p>
@@ -72,14 +102,14 @@ const Booking = () => {
                         </div>
                         <div className="vat">
                             <p>Vat </p>
-                            <p>$88.00</p>
+                            <p>$18.00</p>
                         </div>
                     </div>
                 </div>
                 <div className="total">
                     <div className="price">
                         <span>total</span>
-                        <p>$350.59</p>
+                        <p>${total}</p>
                     </div>
                     <button>
                         Confirm

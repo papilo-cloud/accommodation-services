@@ -8,6 +8,7 @@ header{
     box-shadow:0 3px 15px rgba(225, 225, 225, 0.4);
     background-color: #f2f7ff;
     padding: 15px;
+    color: #2f2d51;
 }
 header nav {
     position: relative;
@@ -63,10 +64,25 @@ nav .list{
     }
 }
 @media screen and (min-width:768px) {
+    header{
+        padding:20px 40px;
+    }
     nav .hamburger button{
         display: none;
     }
     nav .list button{
         display: none;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    header{
+        padding:20px 6rem;
+    }
+    .booking .date{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5rem;
+        gap: 40px;
     }
 }
