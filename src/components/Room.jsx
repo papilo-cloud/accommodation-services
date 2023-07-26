@@ -64,6 +64,7 @@ const Room = ({handleUser}) => {
             hours: startDate.getHours(),
             guests,
             rooms,
+            user: userId,
         })
         setRooms('')
         setFname('')

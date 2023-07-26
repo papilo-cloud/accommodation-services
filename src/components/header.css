@@ -4,7 +4,7 @@ header{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     box-shadow:0 3px 15px rgba(225, 225, 225, 0.4);
     background-color: #f2f7ff;
     padding: 15px;
@@ -25,9 +25,23 @@ nav .hamburger{
     align-items: center;
     gap: 20px;
 }
+nav .hamburger .cart{
+    position: relative;
+}
+nav .hamburger .cart .top{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff97b5;
+    right: 0;
+    border-radius: 50%;
+    top: -5px;
+}
 nav .hamburger .cart-item{
     position: absolute;
     width: 300px;
+    min-height: 200px;
     background-color: #fff;
     top: 40px;
     right: 0;
@@ -92,6 +106,12 @@ nav .hamburger .cart-item{
     position: relative;
     display: flex;
     justify-content: space-between;
+    font-weight: 600;
+}
+.cart-item .empty{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
     font-weight: 600;
 }
 nav .hamburger button{
