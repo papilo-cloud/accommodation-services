@@ -26,9 +26,8 @@ const Booking = ({user, handleTotal}) => {
                     'August','September', 'October',
                     'Noveember', 'December'
                 ]
-    const rDay = user.eday - user.sday;
-    const total = rDay*user.rooms*room.price + 25.89 + 18.00;
-    const subTotal = rDay*user.rooms*room.price;
+    const total = user.diff*user.rooms*room.price + 25.89 + 18.00;
+    const subTotal = user.diff*user.rooms*room.price;
 
   return (
     <div className='booking'>
@@ -57,7 +56,7 @@ const Booking = ({user, handleTotal}) => {
                             <span>2PM-5PM</span>
                         </div>
                     </div>
-                    <p className='p'>{rDay} nights</p>
+                    <p className='p'>{user.diff} nights</p>
                     <div className="check out">
                         <div className="img">
                             <img src={arrowup} alt="arrow-up" />
@@ -90,7 +89,7 @@ const Booking = ({user, handleTotal}) => {
                     </div>
                     <div className="detail">
                         <div className="night">
-                            <p>{user.rooms} Rooms x {rDay} Nights <span>x {room.price}</span></p>
+                            <p>{user.rooms} Rooms x {user.diff} Nights <span>x {room.price}</span></p>
                             <p>${subTotal} </p>
                         </div>
                         <div className="service">
