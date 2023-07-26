@@ -9,7 +9,7 @@ import data from '../data.js'
 
 import { Link, useParams } from 'react-router-dom'
 
-const Booking = ({user}) => {
+const Booking = ({user, handleTotal}) => {
 
     const {userId} = useParams()
     function getId(number) {
@@ -30,8 +30,6 @@ const Booking = ({user}) => {
     const total = rDay*user.rooms*room.price + 25.89 + 18.00;
     const subTotal = rDay*user.rooms*room.price;
 
-    console.log(user)
-    console.log(room)
   return (
     <div className='booking'>
         <div className="top">
