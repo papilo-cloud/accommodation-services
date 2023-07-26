@@ -78,6 +78,9 @@
     padding: 1px 3px;
     border-radius: 50%;
 }
+.booking .date .time .out .img{
+    background: linear-gradient(to bottom right,rgba(147, 216, 248,.1), #93d8f8) ;
+}
 .booking .date .time .check span{
     font-size: 0.7em;
 }
