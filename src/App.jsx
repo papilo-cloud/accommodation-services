@@ -6,6 +6,7 @@ import MainBody from './components/MainBody'
 import Booking from './components/Booking'
 import Room from './components/Room'
 import {Routes, Route } from 'react-router'
+import Payment from './components/Payment'
 
 
 
@@ -14,7 +15,6 @@ function App() {
 
   function handleUser(params) {
     setUser(params)
-    // console.log(params)
   }
 
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path='/' exact element={<MainBody />} />
         <Route path='room/:userId' element={<Room handleUser={handleUser} />} />
         <Route path='room/:userId/book' element={<Booking user={user} />} />
+        <Route path='room/:userId/book/payment' element={<Payment />} />
       </Routes>
     </div>
   )

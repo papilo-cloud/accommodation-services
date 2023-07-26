@@ -23,9 +23,9 @@ const Room = ({handleUser}) => {
     const [fname, setFname] = useState('')
     const [lname, setLname] = useState('')
     const [mail, setMail] = useState('')
-    const [number, setNumber] = useState(0)
-    const [guests, setGuests] = useState(0)
-    const [rooms, setRooms] = useState(0)
+    const [number, setNumber] = useState(234)
+    const [guests, setGuests] = useState(1)
+    const [rooms, setRooms] = useState(1)
     const [click, setClick] = useState(false)
     const [submit, setSubmit] = useState(false)
 

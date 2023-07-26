@@ -49,14 +49,13 @@
 }
 .room .img .details{
     position: absolute;
-    z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
     bottom: 10px;
     display: flex;
-    padding: 5px 15px;
+    padding: 15px 15px;
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;

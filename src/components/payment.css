@@ -1,0 +1,73 @@
+
+.payment{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    padding-top: 40px;
+}
+.payment form{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label p{
+    margin-bottom: 5px;
+}
+form input{
+    width: 100%;
+    padding: 17px 10px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #2f2d51;
+    
+}
+form label .span{
+    position: relative;
+    font-size: 0.7rem;
+    color: red;
+    text-transform: none;
+    margin-bottom: 20px;
+    display: none;
+}
+form label .error{
+    display: block;
+}
+form > div{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+form > div label:nth-child(1){
+    box-sizing: border-box;
+    flex: 1;
+}
+form > div label:nth-child(1) input{
+    width: 50%;
+}
+form > div label:nth-child(2){
+    flex: 1;
+}
+form button{
+    padding: 20px;
+    border: 0;
+    border-radius: 10px;
+    color: #2f2d51;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #93d8f8;
+}
+@media screen and (min-width: 668px) {
+    .payment form{
+        width: 500px;
+        margin: 0 auto; 
+    }
+}
