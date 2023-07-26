@@ -9,14 +9,91 @@ header{
     background-color: #f2f7ff;
     padding: 15px;
     color: #2f2d51;
+    display: flex;
+    justify-content: space-between;
 }
 header nav {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
-
+nav .hamburger{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav .hamburger .cart-item{
+    position: absolute;
+    width: 300px;
+    background-color: #fff;
+    top: 40px;
+    right: 0;
+    z-index: 1;
+    border-radius: 15px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    font-size: 0.9em;
+}
+.cart-item .check{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.cart-item .check::after, .cart-item .night::after, .cart-item .extras::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    background-color: #edeff2;
+    bottom: -10px;
+}
+.cart-item .check p{
+    font-weight: 600;
+    line-height: 22px;
+}
+.cart-item .check span{
+    opacity: .7;
+}
+.cart-item .night{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.cart-item .night p{
+    line-height: 30px;
+    font-weight: 600;
+}
+.cart-item .night p span{
+    font-weight: 400;
+    font-size: 0.7em;
+    margin-right: 10px;
+    opacity: .7;
+}
+.cart-item .extras{
+    position: relative;
+    margin-bottom: 20px;
+}
+.cart-item .extras> p:nth-child(1){
+    font-weight: 600;
+    line-height: 26px;
+}
+.cart-item .extras .mesg p{
+    line-height: 18px;
+    font-size: 0.8rem;
+}
+.cart-item .total{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
 nav .hamburger button{
     border: none;
     background-color: inherit;
@@ -76,7 +153,7 @@ nav .list li{
         padding:20px 40px;
     }
     
-    nav .hamburger button{
+    nav .hamburger .menu{
         display: none;
     }
     nav .list button{

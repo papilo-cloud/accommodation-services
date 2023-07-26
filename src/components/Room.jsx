@@ -60,7 +60,7 @@ const Room = ({handleUser}) => {
             smonth: startDate.getMonth(),
             eday: endDate.getDate(),
             emonth: endDate.getMonth(),
-            diff:  endDate.getDate()-startDate.getDate(),
+            diff:  Math.round((endDate.getTime()-startDate.getTime()) / (1000*60*60*24)),
             hours: startDate.getHours(),
             guests,
             rooms,

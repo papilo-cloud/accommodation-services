@@ -13,7 +13,7 @@ import Payment from './components/Payment'
 function App() {
   const [user, setUser] = useState([]);
   const [total, setTotal] = useState(0);
-
+  console.log(user)
   function handleTotal(params) {
     setTotal(params)
   }
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header user={user} />
       
       <Routes>
         <Route path='/' exact element={<MainBody />} />
