@@ -1,3 +1,78 @@
 .summary{
-    
+    position: relative;
+    width: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #2f2d51;
+}
+.summary .img{
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.summary .img p{
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #2f2d51;
+}
+.summary .detail{
+    position: relative;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+.detail .p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.detail .invoice{
+    padding: 20px;
+    background-color: #f2f7ff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.detail .invoice span{
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 10px;
+    color: #bbb;
+    font-weight: 500;
+}
+.detail .invoice p{
+    color: #096c9a;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.detail .total{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.detail button{
+    padding: 20px 40px;
+    display: block;
+    border: 0;
+    border-radius: 40px;
+    color: #2f2d51;
+    font-weight: 600;
+    margin: 0 auto;
+    background-color: #93d8f8;
+}
+.detail button a{
+    text-decoration: none;
+    color: #2f2d51;
+}
+@media screen and (min-width:630px) {
+    .summary{
+        width: 500px;
+        margin: 0 auto;
+    }
 }

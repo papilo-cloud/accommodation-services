@@ -12,6 +12,11 @@ import Payment from './components/Payment'
 
 function App() {
   const [user, setUser] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  function handleTotal(params) {
+    setTotal(params)
+  }
 
   function handleUser(params) {
     setUser(params)
@@ -24,7 +29,7 @@ function App() {
       <Routes>
         <Route path='/' exact element={<MainBody />} />
         <Route path='room/:userId' element={<Room handleUser={handleUser} />} />
-        <Route path='room/:userId/book' element={<Booking user={user} />} />
+        <Route path='room/:userId/book' element={<Booking user={user} handleTotal={handleTotal} />} />
         <Route path='room/:userId/book/payment' element={<Payment />} />
       </Routes>
     </div>
